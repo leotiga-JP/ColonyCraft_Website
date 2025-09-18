@@ -10,10 +10,12 @@ body {
 
 /* ヘッダー */
 header {
-    background: #4CAF50;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+    background-image: url("image/header.jpg"); /* ← imageフォルダ内の画像を指定 */
+    background-size: cover;      /* ヘッダーの幅いっぱいに拡大縮小 */
+    background-position: center; /* 画像の中心を基準に表示 */
+    color: white;                /* タイトルの文字色を白に */
+    padding: 60px 20px;          /* 上下に余白を広めに設定 */
+    text-align: center;          /* タイトルを中央に配置 */
 }
 
 /* ナビゲーション */
