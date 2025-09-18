@@ -10,12 +10,18 @@ body {
 
 /* ヘッダー */
 header {
-    background-image: url("image/header.png"); /* ← imageフォルダ内の画像を指定 */
-    background-size: cover;      /* ヘッダーの幅いっぱいに拡大縮小 */
-    background-position: center; /* 画像の中心を基準に表示 */
-    color: white;                /* タイトルの文字色を白に */
-    padding: 60px 20px;          /* 上下に余白を広めに設定 */
-    text-align: center;          /* タイトルを中央に配置 */
+    background-image: url("image/header.png"); /* GitHub Pages でも確実に読み込む */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+
+    height: 300px;              /* 高さ固定 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* ナビゲーション */
