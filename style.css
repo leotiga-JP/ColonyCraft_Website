@@ -10,13 +10,38 @@ body {
 
 /* ヘッダー */
 header {
-    background-image: url("image/2023-07-01_22.25.07.png"); /* ← imageフォルダ内の画像を指定 */
-    background-size: cover;      /* ヘッダーの幅いっぱいに拡大縮小 */
-    background-position: center; /* 画像の中心を基準に表示 */
-    color: white;                /* タイトルの文字色を白に */
-    padding: 60px 20px;          /* 上下に余白を広めに設定 */
-    text-align: center;          /* タイトルを中央に配置 */
+    position: relative;
+    height: 300px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
 }
+
+/* 背景スクショ */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("image/header.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+/* 半透明オーバーレイ */
+header::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* 黒の透明度40% */
+    z-index: -1;
+}
+
 
 /* ナビゲーション */
 nav ul {
