@@ -8,27 +8,47 @@ body {
     color: #333;
 }
 
-/* ヘッダー */
+/* ヘッダー（背景画像 + 黒いオーバーレイ） */
 header {
-    background-image: url("image/header.png"); /* GitHub Pages でも確実に読み込む */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
+    height: 300px;
     color: white;
-
-    height: 300px;              /* 高さ固定 */
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("image/header.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+/* 黒い半透明オーバーレイ */
+header::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* ← 黒を50%透明で重ねる */
+    z-index: -1;
 }
 
 /* ナビゲーション */
+nav {
+    background: #333;  /* フッターと同じ色 */
+}
+
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
+    padding: 10px 0;
+    margin: 0;
     display: flex;
     justify-content: center;
 }
